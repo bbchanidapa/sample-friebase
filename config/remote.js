@@ -1,17 +1,16 @@
 var Client = require('ssh2').Client
 
 var conn = new Client()
-conn.on('ready', function () {
+conn.on('ready', () => {
     console.log('Client :: ready')
-    conn.shell(function (err, stream) {
+    conn.shell((err, stream) => {
         if (err) throw err
-        stream.on('close', function () {
+        stream.on('close', () => {
             console.log('Stream :: close')
             conn.end()
-        }).on('data', function (data) {
+        }).on('data', (data) => {
             console.log('OUTPUT: ' + data)
-        })
-        stream.end([
+        }).end([
             'cd Desktop/BB',
             'ls -la',
             'exit'].join('\n'))
