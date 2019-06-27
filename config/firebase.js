@@ -8,4 +8,14 @@ const firebaseConfig = {
     appId: "1:627628489369:web:0f1e23f18d615919"
 }
 
+const connectedFirebase = () => {
+    // var connectedRef = firebase.database().ref(".info/connected");
+    // connectedRef.on("value", function (snap) {
+    //     if (snap.val() === true) {
+    //         console.log("connected");
+    //     } else {
+    //         console.log("not connected");
+    //     }
+    // })
+}
 module.exports = firebaseConfig
